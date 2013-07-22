@@ -23,9 +23,24 @@ public class SingleLinkedListTest extends TestCase {
 	}
 
 	public void testCreateWithObjectList() {
-		List<Node> nodes = new ArrayList<Node>();
+		List<Node> nodes = createNodes();
 		SingleLinkedList list = new SingleLinkedList(nodes);
 		assertFalse(list.getList().isEmpty());
 		assertTrue(list.getList().size() > 0);
+	}
+
+	private List<Node> createNodes() {
+		List<Node> nodes = new ArrayList<Node>();
+		int nodeSize = 5;
+		for (int i = 0; i < nodeSize; i++) {
+			Node node = new Node();
+			node.setValue("Node " + i);
+			int before = i > 0 ? i - 1 : -1;
+			int after = i < nodeSize ? i + 1 : -1;
+			node.setBefore(before);
+			node.setAfter(after);
+			nodes.add(node);
+		}
+		return nodes;
 	}
 }
