@@ -21,4 +21,11 @@ public class SingleLinkedListTest extends TestCase {
 		SingleLinkedList list = new SingleLinkedList(nodes);
 		assertTrue(list.getList().isEmpty());
 	}
+
+	public void testCreateWithObjectList() {
+		List<Node> nodes = new ArrayList<Node>();
+		SingleLinkedList list = new SingleLinkedList(nodes);
+		assertFalse(list.getList().isEmpty());
+		assertTrue(list.getList().size() > 0);
+	}
 }
