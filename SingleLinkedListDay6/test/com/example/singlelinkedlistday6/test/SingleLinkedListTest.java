@@ -29,7 +29,7 @@ public class SingleLinkedListTest extends TestCase {
 		List<Node> nodes = createNodes(nodeSize);
 		SingleLinkedList list = new SingleLinkedList(nodes);
 		assertFalse(list.getList().isEmpty());
-		assertTrue(list.getList().size() > 0);
+		assertTrue(list.size() > 0);
 	}
 
 	// 3
