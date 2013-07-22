@@ -21,7 +21,7 @@ public class SingleLinkedList {
 	}
 
 	public int size() {
-		return 0;
+		return list.size();
 	}
 
 }
