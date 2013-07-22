@@ -20,4 +20,8 @@ public class SingleLinkedList {
 		return list;
 	}
 
+	public int size() {
+		return 0;
+	}
+
 }

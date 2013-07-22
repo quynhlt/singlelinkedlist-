@@ -16,27 +16,37 @@ import junit.framework.TestCase;
  * 
  */
 public class SingleLinkedListTest extends TestCase {
+	// 1
 	public void testCreateWithEmptyList() {
 		List<Node> nodes = new ArrayList<Node>();
 		SingleLinkedList list = new SingleLinkedList(nodes);
 		assertTrue(list.getList().isEmpty());
 	}
 
+	// 2
 	public void testCreateWithObjectList() {
-		List<Node> nodes = createNodes();
+		int nodeSize = 5;
+		List<Node> nodes = createNodes(nodeSize);
 		SingleLinkedList list = new SingleLinkedList(nodes);
 		assertFalse(list.getList().isEmpty());
 		assertTrue(list.getList().size() > 0);
 	}
 
-	private List<Node> createNodes() {
+	// 3
+	public void testCanGetSizeOfLinkedList() {
+		int actualSize = 5;
+		List<Node> nodes = createNodes(actualSize);
+		SingleLinkedList list = new SingleLinkedList(nodes);
+		assertTrue(actualSize == list.size());
+	}
+
+	private List<Node> createNodes(int n) {
 		List<Node> nodes = new ArrayList<Node>();
-		int nodeSize = 5;
-		for (int i = 0; i < nodeSize; i++) {
+		for (int i = 0; i < n; i++) {
 			Node node = new Node();
 			node.setValue("Node " + i);
 			int before = i > 0 ? i - 1 : -1;
-			int after = i < nodeSize ? i + 1 : -1;
+			int after = i < n ? i + 1 : -1;
 			node.setBefore(before);
 			node.setAfter(after);
 			nodes.add(node);
