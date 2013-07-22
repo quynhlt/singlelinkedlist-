@@ -33,11 +33,26 @@ public class SingleLinkedListTest extends TestCase {
 	}
 
 	// 3
-	public void testCanGetSizeOfLinkedList() {
+	public void testCanGetSizeOfList() {
 		int actualSize = 5;
 		List<Node> nodes = createNodes(actualSize);
 		SingleLinkedList list = new SingleLinkedList(nodes);
 		assertTrue(actualSize == list.size());
+	}
+
+	// 4
+	public void testCanAddNewObjectToAfterNodeNOfList() {
+		int nodeSize = 5;
+		List<Node> nodes = createNodes(nodeSize);
+		SingleLinkedList list = new SingleLinkedList(nodes);
+		int position = 2;
+		Object object = "New node to add";
+		Node node = list.get(position);
+		list.insertAfter(node, object);
+		
+		Node actualNode = list.get(position + 1);
+		assertTrue(nodeSize < list.size());
+		assertEquals(object, actualNode.getValue());
 	}
 
 	private List<Node> createNodes(int n) {

@@ -24,4 +24,13 @@ public class SingleLinkedList {
 		return list.size();
 	}
 
+	public Node get(int position) {
+		return list.get(position);
+	}
+
+	public void insertAfter(Node node, Object object) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
